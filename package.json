@@ -5,7 +5,7 @@
   "main": "calculator.js",
   "scripts": {
     "start": "node app.js",
-    "test:backend":"jest integration.test.js",
+    "test:app":"jest integration.test.js",
     "test": "jest"
   },
   "author": "",
