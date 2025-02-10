@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "test:app": "jest integration.test.js",
+    "test:frontend": "jest && bash ./open-browser.sh",
     "test": "jest"
   },
   "author": "",
