@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Frontend Test</title>
+    </head>
+    <body>
+        <div id="message"></div>
+        <script>
+            fetch('http://localhost:3000/api/greeting')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').textContent = data.message;
+                });
+        </script>
+    </body>
+</html>
+
+  

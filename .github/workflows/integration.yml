@@ -1,0 +1,25 @@
+name: Integration Tests
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+        
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    - name: Install Dependencies
+      run: npm ci
+    - name: Run the backend test
+      run: npm run test:app
+    - name: Start the backend server
+      run: npm run start:backend &
+    - name: Run frontend test
+      run: npm run test:frontend
+
+    

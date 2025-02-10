@@ -4,11 +4,16 @@
   "description": "",
   "main": "calculator.js",
   "scripts": {
+    "start": "node app.js",
+    "test:backend":"jest integration.test.js",
     "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
