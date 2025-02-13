@@ -8,25 +8,18 @@ jobs:
         
     steps:
     - uses: actions/checkout@v4
-
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20.x'
         cache: 'npm'
-
     - name: Install Dependencies
       run: npm ci
-
+    - name: Run the backend test
+      run: npm run test:app
     - name: Start the backend server
       run: npm run start:backend &
-    
-    - name: Wait for backend to be ready
-      run: wait-on http://localhost:3000/api/greeting
-    
-
-    - name: Run backend test
-      run: npm run test:app
-
     - name: Run frontend test
       run: npm run test:frontend
+
+    
